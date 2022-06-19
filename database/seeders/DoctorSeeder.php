@@ -17,7 +17,7 @@ class DoctorSeeder extends Seeder
     {
         \App\Models\doctor::factory()->create([
             'name' => 'abc',
-            'email' => 'abc12@gmail.com',
+            'email' => 'abc56@gmail.com',
             'password' => md5('abc5678'),
             'gender' => 'female',
             'bg' => 'A+',
