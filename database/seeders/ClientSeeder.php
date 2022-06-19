@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Client;
 
 class ClientSeeder extends Seeder
 {
@@ -14,6 +15,16 @@ class ClientSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Client::factory()->create([
+            'name' => 'Rahat',
+            'email' => 'rahat@gmail.com',
+            'password' => md5('12345678'),
+            'gender' => 'Male',
+            'dob' => '12-06-1997',
+            'blood_group' => 'O+',
+            'phone' => '01122257623',
+            'address' => '126, Gulshan',
+        ]);
+        
     }
 }

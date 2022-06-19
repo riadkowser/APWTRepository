@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('confirm_password');
             $table->string('gender');
             $table->string('dob');
             $table->string('blood_group');
