@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return "welcome Heathcare";
-});
+Route::get('/client/login',[ClientController::class,"clientLogin"])->name("clientLogin");
+Route::post('/client/login',[ClientController::class,"clientLoginSubmitted"])->name("clientLogin");
+
+Route::get('/client/registration',[ClientController::class,"clientRegistration"])->name("clientRegistration");
+Route::post('/client/registration',[ClientController::class,"clientRegistrationSubmitted"])->name("clientRegistration");
+
+Route::get('/client/home',[ClientController::class,"home"])->name("home");
+
+Route::get('/logout',function()
+{
+    session()->flush();
+    session()->flash('msg','Sucessfully Logged out');
+    return redirect()->route('clientLogin');
+                            })->name('logout');
