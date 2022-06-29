@@ -20,7 +20,7 @@ class ClientSeeder extends Seeder
             'client_email' => 'rahat100@gmail.com',
             'client_password' => md5('12345678'),
             'client_dob' => '12-06-1997',
-            'client_gender' => 'Male',          
+            'client_gender' => 'Male',         
             'client_bg' => 'O+',
             'client_phone' => '01122257623',
             'client_address' => '126, Gulshan',

@@ -16,12 +16,12 @@ class DoctorSeeder extends Seeder
     public function run()
     {
         \App\Models\doctor::factory()->create([
-            'name' => 'abc',
-            'email' => 'ahad59@gmail.com',
-            'password' => md5('abc5678'),
-            'gender' => 'female',
-            'bg' => 'A+',
-            'phone' => '01711113333'
+            'doctor_name' => 'rahat',
+            'doctor_email' => 'rahat@gmail.com',
+            'doctor_password' => md5('abc5678'),
+            'doctor_gender' => 'female',
+            'doctor_bg' => 'A+',
+            'doctor_phone' => '01711113333'
         ]);
     }
 }
