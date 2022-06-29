@@ -109,6 +109,11 @@ class ClientController extends Controller
         if($c){
            session()->put('session_email',$c->client_email);
            session()->put('client_name',$c->client_name);
+
+           session()->put('client_dob',$c->client_dob);
+           session()->put('client_phone',$c->client_phone);
+
+           session()->put('client_address',$c->client_address);
             return redirect()->route('home');
         }
         else {
@@ -122,12 +127,6 @@ class ClientController extends Controller
     {
         return view('client.client_home');
     }
-
-    
-
-
-
-
 
 
 
@@ -183,5 +182,54 @@ class ClientController extends Controller
 
     }
 
-    
+
+
+    public function clientProfile()
+    {
+        return view('client.client_profile');
+    }
+
+
+    public function clientProfileUpdated(Request $request)
+    {
+        $validate = $request->validate([
+            "client_name"=>'required|string|min:3|max:10',
+            "client_dob"=>'required|before:-3 years',
+            "client_phone"=>'required|numeric|min:11',
+            "client_address"=>'required|string|max:50'
+        ],
+        [
+            "client_name.required"=>"Please provide your name",
+            "client_name.string"=>"Name must be alphabets",
+            "client_dob.before"=>"Must be more than 3 years to registration",
+            "client_phone.numeric"=>"Phone number must be an integer number",
+            "client_address.required"=>"Please provide your address",
+                           
+        ]
+
+    );
+
+    $c = Client::where('client_email',$request->client_email)->first();
+
+    $c->client_name = $request->client_name;
+    $request->session()->put('client_name',$request->client_name);
+
+    $c->client_dob = $request->client_dob;
+    $request->session()->put('client_dob',$request->client_dob);
+
+    $c->client_phone = $request->client_phone;
+    $request->session()->put('client_phone',$request->client_phone);
+
+    $c->client_address = $request->client_address;
+    $request->session()->put('client_address',$request->client_address);
+
+    $r = $c->save();
+
+    if($r)
+    {
+        return redirect()->back()->with('success', 'Profile Update successfully');
+    }
+
+ }
+
 }

@@ -15,6 +15,8 @@ use App\Http\Controllers\ClientController;
 |
 */
 
+// Client
+
 Route::get('/client/login',[ClientController::class,"clientLogin"])->name("clientLogin");
 Route::post('/client/login',[ClientController::class,"clientLoginSubmitted"])->name("clientLogin");
 
@@ -29,3 +31,6 @@ Route::get('/logout',function()
     session()->flash('msg','Sucessfully Logged out');
     return redirect()->route('clientLogin');
                             })->name('logout');
+
+Route::get('/client/profile',[ClientController::class,"clientProfile"])->name("clientProfile");
+Route::post('/client/profile',[ClientController::class,"clientProfileUpdated"])->name("clientProfile");
