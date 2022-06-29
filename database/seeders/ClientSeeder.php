@@ -16,14 +16,14 @@ class ClientSeeder extends Seeder
     public function run()
     {
         \App\Models\Client::factory()->create([
-            'name' => 'Rahat',
-            'email' => 'rahat100@gmail.com',
-            'password' => md5('12345678'),
-            'gender' => 'Male',
-            'dob' => '12-06-1997',
-            'blood_group' => 'O+',
-            'phone' => '01122257623',
-            'address' => '126, Gulshan',
+            'client_name' => 'Rahat',
+            'client_email' => 'rahat100@gmail.com',
+            'client_password' => md5('12345678'),
+            'client_dob' => '12-06-1997',
+            'client_gender' => 'Male',          
+            'client_bg' => 'O+',
+            'client_phone' => '01122257623',
+            'client_address' => '126, Gulshan',
         ]);
         
     }
