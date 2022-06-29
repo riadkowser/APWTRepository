@@ -26,7 +26,7 @@ return new class extends Migration
         */
             $table->id();    
             $table->string('doctor_name');
-            $table->string('doctor_email');
+            $table->string('doctor_email')->unique();
             $table->string('doctor_password');
             $table->string('doctor_gender');
             $table->string('doctor_bg');
