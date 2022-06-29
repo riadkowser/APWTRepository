@@ -1,3 +1,10 @@
-Hi ! welcome {{session()->get('anik')}}
+@extends('client.layouts.app')
+@section('content')
 
-<a href="{{route('logout')}}">Log Out</a>
+<div class="container">
+Hello there ! welcome {{session()->get('client_name')}} <br>
+
+</div>
+
+
+@endsection

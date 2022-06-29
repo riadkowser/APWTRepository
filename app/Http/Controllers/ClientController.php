@@ -102,14 +102,13 @@ class ClientController extends Controller
         ]
 
     );
-    // return redirect()->route('clientLogin');
 
         $c=Client::where('client_email',$request->client_email)
                             ->where('client_password',md5($request->client_password))->first();
 
         if($c){
            session()->put('session_email',$c->client_email);
-           session()->put('anik',$c->client_name);
+           session()->put('client_name',$c->client_name);
             return redirect()->route('home');
         }
         else {
