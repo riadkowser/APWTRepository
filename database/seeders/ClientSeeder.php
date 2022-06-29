@@ -17,7 +17,7 @@ class ClientSeeder extends Seeder
     {
         \App\Models\Client::factory()->create([
             'name' => 'Rahat',
-            'email' => 'rahat12@gmail.com',
+            'email' => 'rahat122@gmail.com',
             'password' => md5('12345678'),
             'gender' => 'Male',
             'dob' => '12-06-1997',
