@@ -8,7 +8,7 @@
               <a class="nav-link active" aria-current="page" href="{{route('clientProfile')}}">Profile</a>
             </li>
             <li class="nav-item">
-              <a style="color: black" class="nav-link" href="#">Contact</a>
+              <a style="color: black" class="nav-link" href="{{route('doctorList')}}">Doctors</a> 
             </li>
 
             <li class="nav-item">

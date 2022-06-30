@@ -34,3 +34,5 @@ Route::get('/logout',function()
 
 Route::get('/client/profile',[ClientController::class,"clientProfile"])->name("clientProfile");
 Route::post('/client/profile',[ClientController::class,"clientProfileUpdated"])->name("clientProfile");
+
+Route::get('/doctors',[ClientController::class,"doctorList"])->name("doctorList");

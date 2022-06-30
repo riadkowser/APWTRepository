@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Doctor;
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
 use Illuminate\Http\Request;
@@ -231,5 +232,13 @@ class ClientController extends Controller
     }
 
  }
+
+
+    public function doctorList()
+    {
+        $doctors= Doctor::all();
+
+        return view('client.doctorList')->with("d",$doctors);
+    } 
 
 }
