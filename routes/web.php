@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -36,3 +37,14 @@ Route::get('/client/profile',[ClientController::class,"clientProfile"])->name("c
 Route::post('/client/profile',[ClientController::class,"clientProfileUpdated"])->name("clientProfile");
 
 Route::get('/doctors',[ClientController::class,"doctorList"])->name("doctorList");
+
+//Product List
+Route::get('productlist',[ProductController::class, 'list'])->name('productlist');
+
+//add product
+Route::get('/addProduct', function () {
+    return view('addProduct');
+});
+
+Route::post('/addProduct',[ProductController::class, 'add'])->name('add');
+
